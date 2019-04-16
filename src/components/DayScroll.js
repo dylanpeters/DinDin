@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     margin: 10,
     textAlign: 'center',
     fontSize: 20,
-    paddingTop: 70,
+    paddingTop: 20,
     
   }
 });

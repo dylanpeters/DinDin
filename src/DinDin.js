@@ -24,7 +24,7 @@ const App = createAppContainer(MainStack);
 class DinDin extends Component {
     render(){
         return(
-            <App persistenceKey={"NavigationState"} />
+            <App  persistenceKey={"NavigationState"}/>
         )
     }
 }

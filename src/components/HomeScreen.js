@@ -2,6 +2,8 @@ import * as React from 'react'
 import {View, Text, StyleSheet, Image, TouchableOpacity, paddingTop, paddingBottom} from 'react-native'
 import DayScroll from './DayScroll'
 import MonthScroll from './MonthScroll'
+import Carousel from './Carousel'
+import Invitation from './Invitation'
 
 export default class HomeScreen extends React.Component {
     render() {
@@ -18,6 +20,7 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <MonthScroll style ={styles.monthscroll}/>
+          <Carousel  />
           <DayScroll/>
         </View>
         
@@ -37,7 +40,7 @@ const styles = StyleSheet.create(
           paddingTop: 25, 
           paddingBottom: 10,
           borderBottomColor: 'rgb(233,233,233)',
-        borderBottomWidth: StyleSheet.hairlineWidth,
+          borderBottomWidth: StyleSheet.hairlineWidth,
 
       },
       container1:{
@@ -46,12 +49,14 @@ const styles = StyleSheet.create(
         //alignItems: 'center',
 
       },
+
       title:{
           letterSpacing: 0.4,
           textAlign: 'left',
           fontSize: 21,
           color: "#000000",
       },
+
       searchIcon:{
           margin:10
       },
