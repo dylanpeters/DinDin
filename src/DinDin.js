@@ -50,10 +50,10 @@ class DinDin extends Component {
     
     render(){
         return(
-            <App persistenceKey={"NavigationStat"}  />
+            <App  />
         )
     }
 }
 
-// 
+//  persistenceKey={"NavigationStat"}
 export default DinDin;
