@@ -63,6 +63,7 @@ render() {
 
 I18n.fallbacks = true;
 
+I18n.locale = 'ar';
 I18n.translations = {
   en: {
     greeting: 'Get Started',
@@ -93,7 +94,7 @@ class Splash extends Component {
                 console.log(error)
             })
             this.props.navigation.navigate("home")
-        }
+        }``
     }
    
 
@@ -103,12 +104,8 @@ class Splash extends Component {
         // }
         return(
             <View style = {styles.container} >
-<<<<<<< HEAD
                 
                 <FadeInView style = {styles.iconstyle}>
-=======
-                <View style = {styles.iconstyle}>
->>>>>>> 410592fbfea41d0195d5d25fdd4f4e20ec42532b
                     <Image source={icon} style={styles.image}/>
                 </FadeInView>
                 
