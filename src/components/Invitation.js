@@ -84,16 +84,18 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         //justifyContent: 'center',
         alignItems: 'center',
-        
+        //marginTop: 17,
+        //marginBottom: 30,
+    
         
 
       },
+    
     top: {
      //flex: 1,
      //borderRadius: 10,
-     
      flexDirection: 'row',
-     backgroundColor: '#F5F7F7',
+     backgroundColor: 'white',
      alignItems: 'center',
      justifyContent: 'center',
      width: 300,
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
         height:50,
         width:300,
         flexDirection: 'row',
-        backgroundColor: '#F5F7F7',
+        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
         borderTopColor: 'rgb(233,233,233)',

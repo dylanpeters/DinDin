@@ -20,8 +20,15 @@ export default class HomeScreen extends React.Component {
             </TouchableOpacity>
           </View>
 
+
           <MonthScroll style ={styles.monthscroll}/>
-          <Carousel  />
+
+          <View style = {styles.pendingStyle}>
+              <Text style = {{marginLeft: 12}}>PENDING (6)</Text>
+          </View>
+          
+          <Carousel />
+          
           <DayScroll/>
         </View>
         
@@ -30,11 +37,10 @@ export default class HomeScreen extends React.Component {
 
 }
 
-
 const styles = StyleSheet.create(
   {
       container2:{
-          height: 70,
+          height: 60,
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -46,9 +52,6 @@ const styles = StyleSheet.create(
       },
       container1:{
         flexDirection: 'column',
-        //justifyContent: 'center',
-        //alignItems: 'center',
-
       },
 
       title:{
@@ -62,17 +65,29 @@ const styles = StyleSheet.create(
           margin:10
       },
       menuIcon:{
-          // width: 30,
-          // height: 30,
           margin: 10
       },
       monthscroll:{ 
         paddingTop: 20,
         paddingBottom: 10,
-        
-       
+      },
 
+      carouselView: {
+         
+          backgroundColor: '#e5eaf2',
+          height: 175,
+          justifyContent: 'center',
+          alignItems: 'center',
+      
+        
+      },
+      pendingStyle:{
+        height: 31,
+        backgroundColor: '#f9fafd',
+        justifyContent: 'center',
+        
       }
+
 
       
   }

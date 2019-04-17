@@ -12,11 +12,12 @@ export default class Carousel2 extends React.Component {
             Invitation,
             Invitation,
             Invitation,
-            Invitation,
-            Invitation,
-            Invitation,
+            // Invitation,
+            // Invitation,
+            // Invitation,
 
           ],
+          empty: false
       }
     }
     componentDidUpdate() {
@@ -25,18 +26,27 @@ export default class Carousel2 extends React.Component {
     componentDidMount(){
         
     }
+    
     _renderItem ({item, index}) {
       
       return (
-        <View  >
+        <View style = {styles.carouselView} >
             <Invitation/>
         </View>
     );}
   
     render () {
+
+      var otherThanNull = this.state.entries.some(function (el) {
+        return el === null;
+      }); 
+      if(otherThanNull){
+        return null;
+      }
       
       return (
-        <Carousel 
+        <View style = {styles.carouselView} >
+          <Carousel 
           ref={(c) => { this._carousel = c; }}
           data={this.state.entries}
           renderItem={this._renderItem}
@@ -44,6 +54,8 @@ export default class Carousel2 extends React.Component {
           itemWidth={300}
           layout={'stack'}
         />
+        </View>
+        
    ); 
   }}
 
@@ -54,4 +66,18 @@ export default class Carousel2 extends React.Component {
      alignItems: 'center',
      justifyContent: 'center',
      paddingTop: 100
-  }});
+    },
+
+    carouselView: {
+        
+      backgroundColor: '#e5eaf2',
+      height: 175,
+      justifyContent: 'center',
+      alignItems: 'center',
+  
+  },
+  none:{
+
+  }
+
+  });

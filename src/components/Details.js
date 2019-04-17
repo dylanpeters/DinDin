@@ -21,7 +21,7 @@ export default class Details extends React.Component {
                     <Text style = {styles.title}>DinDin</Text>
 
                 </View>
-                <Map />
+                <Map/>
                 
                 
             </View>
