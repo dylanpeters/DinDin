@@ -4,7 +4,7 @@ import { withNavigation} from 'react-navigation';
 
 
 var rend = true;
-class Invitation extends React.Component{
+class InvitationDetails extends React.Component{
   
    constructor(props) {
         super(props);
@@ -18,12 +18,12 @@ class Invitation extends React.Component{
         };
       }
        
-      flashRed(){
-        this.setState({red:true})
-      }
       normal(){
         this.setState({red:false})
         this.setState({green:false})
+      }
+      flashRed(){
+        this.setState({red:true})
       }
       flashGreen(){
           this.setState({green: true})
@@ -51,11 +51,14 @@ class Invitation extends React.Component{
                 <View style = {styles.container} >
 
                     <TouchableOpacity activeOpacity = {1}
-                    style = {this.state.red? styles.redtop:this.state.green? styles.greentop:styles.top} onPress = {() => this.clickTop()} >
+                    style = {this.state.red? styles.redtop:this.state.green? styles.greentop:styles.top}>
+                    
                         <Image style={styles.picture} source={require('../design/daniel.jpg')} />
                         <View style = {{flexDirection: 'column'}}>
-                            <Text style = {{color: "#1A1A1A"}}> Daniel Graham</Text>
-                            <Text style = {{color: "#7f7f7f"}}> Sunday 17 June - 8:00pm</Text>
+                            <Text style = {{color: "#1A1A1A", textAlign: 'center', fontSize:17}}>Bodo's Bagels, The Corner</Text>
+                            <Text style = {{color: "#1A1A1A",textAlign: 'center',}}> Sun 17 June - 8:00pm</Text>
+                            <Text style = {{color: "#7f7f7f", textAlign: 'center', fontSize: 14, paddingTop: 12}}> Host by Daniel Graham</Text>
+
                         </View>
                     </TouchableOpacity>
 
@@ -84,60 +87,53 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         //justifyContent: 'center',
         alignItems: 'center',
-        
-        
-
       },
     top: {
      //flex: 1,
      //borderRadius: 10,
-     
-     flexDirection: 'row',
+     flexDirection: 'column',
      backgroundColor: '#F5F7F7',
      alignItems: 'center',
      justifyContent: 'center',
      width: 300,
-     height:90,
+     height:170,
      borderTopLeftRadius: 10,
      borderTopRightRadius: 10,
      //spaceBetween: 40
 
     },
+    picture: {
+        width: 60,
+        height:60,
+        borderRadius: 30,
+        margin: 10,
+    },
     redtop: {
        
-        flexDirection: 'row',
+        flexDirection: 'column',
         backgroundColor: 'rgba(255, 0, 0, 0.5)',
         alignItems: 'center',
         justifyContent: 'center',
         width: 300,
-        height:90,
+        height:170,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
-        
-   
-       },
+    },
+
     greentop: {
-       
-        flexDirection: 'row',
+        flexDirection: 'column',
         backgroundColor: 'rgba(0, 255, 0, 0.5);',
         alignItems: 'center',
         justifyContent: 'center',
         width: 300,
-        height:90,
+        height:170,
         borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
-       },
-   
-
-    picture: {
-        width: 50,
-        height:50,
-        borderRadius: 25,
-        marginRight: 25,
+        borderTopRightRadius: 10,   
+    
     },
 
     bottom: {
-        height:50,
+        height:45,
         width:300,
         flexDirection: 'row',
         backgroundColor: '#F5F7F7',
@@ -149,7 +145,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 10,
     },
     redbottom: {
-        height:50,
+        height:45,
         width:300,
         flexDirection: 'row',
         backgroundColor: 'rgba(255, 0, 0, 0.5)',
@@ -161,7 +157,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 10,
     },
     greenbottom: {
-        height:50,
+        height:45,
         width:300,
         flexDirection: 'row',
         backgroundColor: 'rgba(0, 255, 0, 0.5)',
@@ -192,4 +188,4 @@ const styles = StyleSheet.create({
 
   });
 
-  export default withNavigation(Invitation);
+  export default withNavigation(InvitationDetails);

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {View, Text, StyleSheet, Image, TouchableOpacity, paddingTop, paddingBottom} from 'react-native'
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import DayScroll from './DayScroll'
 import MonthScroll from './MonthScroll'
 import Carousel from './Carousel'
@@ -7,6 +7,7 @@ import Invitation from './Invitation'
 
 export default class HomeScreen extends React.Component {
     render() {
+
       return (
         <View style = {styles.container1}>
           <View style={styles.container2}>
@@ -53,7 +54,7 @@ const styles = StyleSheet.create(
       title:{
           letterSpacing: 0.4,
           textAlign: 'left',
-          fontSize: 21,
+          fontSize: 19,
           color: "#000000",
       },
 
@@ -67,6 +68,7 @@ const styles = StyleSheet.create(
       },
       monthscroll:{ 
         paddingTop: 20,
+        paddingBottom: 10,
         
        
 

@@ -48,7 +48,6 @@ class Splash extends Component {
         // }
         return(
             <View style = {styles.container} >
-                
                 <View style = {styles.iconstyle}>
                     <Image source={icon} style={styles.image}/>
                 </View>

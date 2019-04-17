@@ -1,16 +1,13 @@
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView
-} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native'
+
 
 export default class DayScroll extends Component {
   render() {
     return (
       <ScrollView>
+        <Image style = {{margin: 10}}source={require('../design/sliced/addnewevent.png')}/>
         <Text style={styles.welcome}>Welcome to React Native</Text>
         <Text style={styles.welcome}>Welcome to React Native</Text>
         <Text style={styles.welcome}>Welcome to React Native</Text>
