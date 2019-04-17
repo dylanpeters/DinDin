@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import {View, Text, StyleSheet, Image, TouchableOpacity,Dimensions } from 'react-native'
+import {View, Text, StyleSheet, Image, TouchableOpacity,Dimensions, Animated} from 'react-native'
 import icon from '../design/sliced/Illustration.png'
 import dindintext from '../design/sliced/dindintext.png'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import I18n from 'react-native-i18n';
 
 import * as firebase from 'firebase';
 //initialize firebase
@@ -16,12 +17,66 @@ const firebaseConfig = {
   }
 firebase.initializeApp(firebaseConfig);
 
+class FadeInView extends React.Component{
+    state = {
+        fadeAnim: new Animated.Value(0),
+    }
+    
+    componentDidMount() {
+    Animated.loop(
+        Animated.sequence([
+          Animated.timing(
+              this.state.fadeAnim,
+              {
+                toValue: 1,
+                duration: 3000,
+            }),
+          Animated.timing( 
+              this.state.fadeAnim, 
+            {
+                toValue: 0,
+                duration: 3000
+            })
+        ]),
+        {
+          iterations: 100
+        }
+      ).start()
+}
 
+
+render() {
+    let { fadeAnim } = this.state;
+    
+    return (
+        <Animated.View                 // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {this.props.children}
+      </Animated.View>
+    );
+    }
+}
+
+I18n.fallbacks = true;
+
+I18n.translations = {
+  en: {
+    greeting: 'Get Started',
+  },
+  ar: {
+    greeting: 'البدء',
+  },
+};
 let {width, height} = Dimensions.get('screen');
 //Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.PORTRAIT);
 class Splash extends Component {
 
     componentDidMount() {
+        
         firebase.auth().onAuthStateChanged((user)=>{
             if(user != null){
                 console.log(user)
@@ -49,9 +104,9 @@ class Splash extends Component {
         return(
             <View style = {styles.container} >
                 
-                <View style = {styles.iconstyle}>
+                <FadeInView style = {styles.iconstyle}>
                     <Image source={icon} style={styles.image}/>
-                </View>
+                </FadeInView>
                 
                 <View style = {styles.text1}>
                     <Image source={dindintext} style = {styles.dindin} />
@@ -60,7 +115,8 @@ class Splash extends Component {
                 </View>
                 <TouchableOpacity style = {styles.bottom} onPress={() => this.loginWithFacebook()}>
                     <View style = {styles.text2}>
-                        <Text style = {{color: "#ffffff" }}>Get Started</Text>  
+                        <Text style = {{color: "#ffffff" }}>{I18n.t('greeting')}</Text>
+                          
                     </View>
                                       
                     
@@ -71,7 +127,7 @@ class Splash extends Component {
         );
     }
 }
-
+//, {locale: 'ar'}
 
 const styles = StyleSheet.create({
     container: {
