@@ -26,6 +26,7 @@ export default class Carousel2 extends React.Component {
         
     }
     _renderItem ({item, index}) {
+      
       return (
         <View  >
             <Invitation/>
@@ -33,6 +34,7 @@ export default class Carousel2 extends React.Component {
     );}
   
     render () {
+      
       return (
         <Carousel 
           ref={(c) => { this._carousel = c; }}
