@@ -63,13 +63,15 @@ render() {
 
 I18n.fallbacks = true;
 
-I18n.locale = 'ar';
+//I18n.locale = 'ar';
 I18n.translations = {
   en: {
     greeting: 'Get Started',
+    slogan: 'Connecting Food Lovers',
   },
   ar: {
     greeting: 'البدء',
+    slogan: 'ربط عشاق الطعام'
   },
 };
 let {width, height} = Dimensions.get('screen');
@@ -110,14 +112,13 @@ class Splash extends Component {
                 </FadeInView>
                 
                 <View style = {styles.text1}>
-                    <Image source={dindintext} style = {styles.dindin} />
-                    {/* <Text style = {{fontSize: 32, letterSpacing: 1, color: "#808080" }}>DinDin</Text>
-                    <Text style = {{fontStyle: "italic", color: "#808080"}}>connecting food lovers</Text> */}
+                    {/* <Image source={dindintext} style = {styles.dindin} /> */}
+                    <Text style = {{fontSize: 32, letterSpacing: 1, color: "#808080" }}>DinDin</Text>
+                    <Text style = {{fontStyle: "italic", color: "#808080"}}>{I18n.t('slogan')}</Text>
                 </View>
                 <TouchableOpacity style = {styles.bottom} onPress={() => this.loginWithFacebook()}>
                     <View style = {styles.text2}>
                         <Text style = {{color: "#ffffff" }}>{I18n.t('greeting')}</Text>
-                          
                     </View>
                                       
                     
@@ -159,32 +160,32 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 20,
+        paddingTop: 10,
         paddingBottom: 10,
-        width: 50,
-        height: 50,
+        width: 100+'%',
+        height: 40,
 
     },
 
     dindin: {
         flex: 1,
-        width: wp('50%'),
-        height: hp("50%"),
+        width: 50+'%',
+        height: 60+'%',
         resizeMode: 'contain' 
     },
     
     bottom: {
-        flex: 0,
         justifyContent: 'flex-end',
         alignItems: "center",
         width: wp('300%'),
-        height: 50,
+        height: 7+'%',
         backgroundColor: "#139CFF"
     },
     text2:{
-        flex: 0,
         alignItems: 'center',
-        paddingBottom: 15,
+        paddingBottom: 1.5+'%',
+        alignItems:'center',
+        justifyContent:'center'
     }
   });
 

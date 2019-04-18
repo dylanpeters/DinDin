@@ -8,6 +8,8 @@ import HomeScreen from "./components/HomeScreen.js"
 import Invitation from "./components/Invitation.js"
 import Carousel2 from "./components/Carousel.js"
 import Details from "./components/Details.js"
+import DayScroll from "./components/DayScroll.js"
+import AddEvent from "./components/AddEvent.js"
 
 const MainStack = createStackNavigator({
     splash: {
@@ -32,6 +34,12 @@ const MainStack = createStackNavigator({
     },
     details: {
         screen: Details
+    },
+    dayscroll:{
+        screen: DayScroll
+    },
+    addevent:{
+        screen: AddEvent
     }
    
 },

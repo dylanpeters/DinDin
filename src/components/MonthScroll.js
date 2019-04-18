@@ -33,16 +33,7 @@ export default class MonthScroll extends Component {
 }
 
 const styles = StyleSheet.create({
-  welcome: {
-    
-    //textAlign: 'center',
-    fontSize: 20,
-    paddingTop: 12,
-    paddingBottom: 12,
-    borderBottomColor: 'rgb(233,233,233)',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    
-
+  container:{
     
   }
 });

@@ -12,9 +12,9 @@ export default class Carousel2 extends React.Component {
             Invitation,
             Invitation,
             Invitation,
-            // Invitation,
-            // Invitation,
-            // Invitation,
+            Invitation,
+            Invitation,
+            Invitation,
 
           ],
           empty: false
@@ -26,24 +26,26 @@ export default class Carousel2 extends React.Component {
     componentDidMount(){
         
     }
+
     
     _renderItem ({item, index}) {
       
       return (
-        <View style = {styles.carouselView} >
+        <View >
             <Invitation/>
         </View>
     );}
   
     render () {
 
-      var otherThanNull = this.state.entries.some(function (el) {
-        return el === null;
-      }); 
-      if(otherThanNull){
-        return null;
-      }
-      
+      // var otherThanNull = this.state.entries.some(function (el) {
+      //   return el === null;
+      // }); 
+      // if(otherThanNull){
+      //   return null;
+      // }
+
+      this.state.entries[0]
       return (
         <View style = {styles.carouselView} >
           <Carousel 
@@ -71,7 +73,6 @@ export default class Carousel2 extends React.Component {
     carouselView: {
         
       backgroundColor: '#e5eaf2',
-      height: 175,
       justifyContent: 'center',
       alignItems: 'center',
   

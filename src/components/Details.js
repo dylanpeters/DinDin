@@ -33,14 +33,11 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
 
-        //flexDirection: 'column',
-        //position: 'absolute'
     },
 
     mapStyle:{
         flex:1,
         zIndex: 0,
-       // position: 'absolute'
     },
 
     header:{
