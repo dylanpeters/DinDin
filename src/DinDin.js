@@ -58,7 +58,7 @@ class DinDin extends Component {
     
     render(){
         return(
-            <App  />
+            <App persistenceKey={"NavigationStat"}  />
         )
     }
 }

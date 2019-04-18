@@ -23,28 +23,16 @@ export default class Carousel2 extends React.Component {
     componentDidUpdate() {
         this.forceUpdate();
     }
-    componentDidMount(){
-        
-    }
-
     
     _renderItem ({item, index}) {
       
       return (
-        <View >
+        <View>
             <Invitation/>
         </View>
     );}
   
     render () {
-
-      // var otherThanNull = this.state.entries.some(function (el) {
-      //   return el === null;
-      // }); 
-      // if(otherThanNull){
-      //   return null;
-      // }
-
       this.state.entries[0]
       return (
         <View style = {styles.carouselView} >

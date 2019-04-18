@@ -112,33 +112,43 @@ class Splash extends Component {
         //     alert("hey");
         // }
         return(
-            <View style = {styles.container} >        
-                <View style = {styles.backgroundContainer}>
-                    <View style = {styles.backgroundContainer}>
-                        <View style = {styles.backgroundContainer}>
-                            <View style = {styles.backgroundContainer}>
-                                <Image source={logo} style={styles.image}/>  
-                            </View>
-                            <Image source={oval3} style={styles.image}/>  
-                        </View>
-                        <Image source={oval2} style={styles.image}/>
-                    </View>
-                    <Image source={oval1} style={styles.image}/>
-                </View>
-                <View style = {styles.iconcontainer}>
+            <View style = {styles.container} > 
+            
+             <View style = {styles.iconcontainer}>
                     <View style = {styles.toprow}>
-                        <FadeInView style = {styles.iconstyle}>
-                            <Image source={greenGirl} />
-                            <Image source={orangeGirl} />
+                        <FadeInView >
+                            <Image source={purpleGuy} />     
                         </FadeInView> 
                     </View>
-                    <View style = {styles.bottomrow}>
-                        <FadeInView style = {styles.iconstyle}>
-                            <Image source={purpleGuy} />                    
+                    <View style = {styles.middlerow}>
+                        <FadeInView>
+                            <Image source={orangeGirl} />
                         </FadeInView>
                     </View>
-                    
+                    <View style = {styles.bottomrow}>
+                        <FadeInView >
+                            <Image source={greenGirl} />
+                        </FadeInView>
+                    </View>
+
                 </View>
+                <View style = {styles.background}>
+                    <View style = {styles.backgroundContainer}>
+                            <View style = {styles.backgroundContainer}>
+                                <View style = {styles.backgroundContainer}>
+                                    <View style = {styles.backgroundContainer}>
+                                        <Image source={logo} style={styles.circleImage}/>  
+                                    </View>
+                                    <Image source={oval3} style={styles.circleImage}/>  
+                                </View>
+                                <Image source={oval2} style={styles.circleImage}/>
+                            </View>
+                            <Image source={oval1} style={styles.circleImage}/>
+                        </View>
+
+                </View>       
+                
+               
                     
 
                
@@ -161,47 +171,27 @@ class Splash extends Component {
         );
     }
 }
-//, {locale: 'ar'}
-//<FadeInView style = {styles.iconstyle}>
-//<Image source={logo} style={styles.image}/>
-//</FadeInView>
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       //display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
+      //justifyContent: 'center',
   
     },
-    toprow:{
+    background:{
+        //flexDirection: 'column',
         flex:1,
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    bottomrow:{
-        flexDirection:'row',
-        paddingBottom:200
-    },
-    iconcontainer:{
-        // justifyContent: 'center',
-        // alignItems:'center',
-        flexDirection:'column'
-    },
-    iconstyle: {
-        
-        flex: 1,
-        alignItems: 'center',
-        flexDirection:'row',
-        justifyContent: 'center',
-        paddingHorizontal:35
-        //justifyContent: 'flex-start',
-        // width: wp("30%"),
-        // height: hp("10%"),
-        // paddingTop: hp("10%"),
+        paddingTop: 30,
+        // position: 'absolute',
+        // width:50+'%',
+        // height:50+'%',
+        backgroundColor:'blue'
 
     },
     backgroundContainer: {
+        //paddingTop: 30+'%',
         justifyContent:'center',
         alignItems: 'center',
         position: 'absolute',
@@ -209,44 +199,63 @@ const styles = StyleSheet.create({
         top: 0,
         right: 0,
         left: 0,
+        //resizeMode:'contain',
+
        
+
         
     },
-    image: {
-        //flex: 1,
-        // width: wp("30%"),
-        // height: hp("50%"),
-        //resizeMode: 'contain',
-        //zIndex: 0,
- 
+    circleImage:{
+        flex:1,
+        resizeMode: 'contain',
+        // width:20+'%',
+        // height:20+'%',
+     
+
     },
+    iconcontainercontainer:{
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    iconcontainer:{
+        justifyContent: 'center',
+        flexDirection:'column',
+        position: 'absolute',
+
+        width: 300,
+        height: 100+'%',
+        paddingBottom:30+'%',
+    },
+    toprow:{
+        flexDirection: 'row',
+        paddingLeft: 60+'%',
+    },
+    middlerow:{
+        flexDirection: 'row',
+        paddingLeft: 10+'%'
+    },
+    bottomrow:{
+        flexDirection:'row',
+        paddingLeft: 60+'%',
+    },
+ 
     image2: {
         flex: 1,
-        // width: wp("30%"),
-        // height: hp("50%"),
+
         resizeMode: 'contain',
         zIndex: 1,
         position: "absolute",
     },
 
     text1: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 10,
-        paddingBottom: 10,
         width: 100+'%',
-        height: 40,
+        height: 20+'%',
+        paddingBottom: 30,
 
     },
 
-    dindin: {
-        flex: 1,
-        width: 50+'%',
-        height: 60+'%',
-        resizeMode: 'contain' 
-    },
-    
     bottom: {
         justifyContent: 'flex-end',
         alignItems: "center",
@@ -256,7 +265,7 @@ const styles = StyleSheet.create({
     },
     text2:{
         alignItems: 'center',
-        paddingBottom: 1.5+'%',
+        paddingBottom: 1+'%',
         alignItems:'center',
         justifyContent:'center'
     }
