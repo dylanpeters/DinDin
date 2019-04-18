@@ -5,6 +5,13 @@ import dindintext from '../design/sliced/dindintext.png'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import I18n from 'react-native-i18n';
+import logo from '../design/sliced/logo.png'
+import oval1 from '../design/sliced/oval1.png'
+import oval2 from '../design/sliced/oval2.png'
+import oval3 from '../design/sliced/oval3.png'
+import greenGirl from '../design/sliced/greenGirl.png'
+import orangeGirl from '../design/sliced/orangeGirl.png'
+import purpleGuy from '../design/sliced/purpleGuy.png'
 
 import * as firebase from 'firebase';
 //initialize firebase
@@ -105,11 +112,36 @@ class Splash extends Component {
         //     alert("hey");
         // }
         return(
-            <View style = {styles.container} >
-                
-                <FadeInView style = {styles.iconstyle}>
-                    <Image source={icon} style={styles.image}/>
-                </FadeInView>
+            <View style = {styles.container} >        
+                <View style = {styles.backgroundContainer}>
+                    <View style = {styles.backgroundContainer}>
+                        <View style = {styles.backgroundContainer}>
+                            <View style = {styles.backgroundContainer}>
+                                <Image source={logo} style={styles.image}/>  
+                            </View>
+                            <Image source={oval3} style={styles.image}/>  
+                        </View>
+                        <Image source={oval2} style={styles.image}/>
+                    </View>
+                    <Image source={oval1} style={styles.image}/>
+                </View>
+                <View style = {styles.iconcontainer}>
+                    <View style = {styles.toprow}>
+                        <FadeInView style = {styles.iconstyle}>
+                            <Image source={greenGirl} />
+                            <Image source={orangeGirl} />
+                        </FadeInView> 
+                    </View>
+                    <View style = {styles.bottomrow}>
+                        <FadeInView style = {styles.iconstyle}>
+                            <Image source={purpleGuy} />                    
+                        </FadeInView>
+                    </View>
+                    
+                </View>
+                    
+
+               
                 
                 <View style = {styles.text1}>
                     {/* <Image source={dindintext} style = {styles.dindin} /> */}
@@ -130,30 +162,71 @@ class Splash extends Component {
     }
 }
 //, {locale: 'ar'}
+//<FadeInView style = {styles.iconstyle}>
+//<Image source={logo} style={styles.image}/>
+//</FadeInView>
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      display: 'flex',
+      //display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
   
+    },
+    toprow:{
+        flex:1,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    bottomrow:{
+        flexDirection:'row',
+        paddingBottom:200
+    },
+    iconcontainer:{
+        // justifyContent: 'center',
+        // alignItems:'center',
+        flexDirection:'column'
     },
     iconstyle: {
         
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        width: wp("30%"),
-        height: hp("10%"),
-        paddingTop: hp("10%"),
+        flexDirection:'row',
+        justifyContent: 'center',
+        paddingHorizontal:35
+        //justifyContent: 'flex-start',
+        // width: wp("30%"),
+        // height: hp("10%"),
+        // paddingTop: hp("10%"),
+
+    },
+    backgroundContainer: {
+        justifyContent:'center',
+        alignItems: 'center',
+        position: 'absolute',
+        bottom: 0,
+        top: 0,
+        right: 0,
+        left: 0,
+       
+        
     },
     image: {
+        //flex: 1,
+        // width: wp("30%"),
+        // height: hp("50%"),
+        //resizeMode: 'contain',
+        //zIndex: 0,
+ 
+    },
+    image2: {
         flex: 1,
         // width: wp("30%"),
         // height: hp("50%"),
-        resizeMode: 'contain' 
-
+        resizeMode: 'contain',
+        zIndex: 1,
+        position: "absolute",
     },
 
     text1: {
